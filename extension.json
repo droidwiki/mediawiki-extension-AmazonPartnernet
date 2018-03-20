@@ -1,0 +1,37 @@
+{
+	"name": "AmazonPartnernet",
+	"version": "0.1.0",
+	"author": [
+		"Florian Schmidt"
+	],
+	"url": "https://www.droidwiki.org",
+	"descriptionmsg": "amazonpartnernet-desc",
+	"license-name": "MIT",
+	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.27.0"
+	},
+	"AutoloadClasses": {
+		"MediaWiki\\Extension\\AmazonPartnernet\\Hooks": "src/Hooks.php"
+	},
+	"ConfigRegistry": {
+		"amazonpartnernet": "GlobalVarConfig::newInstance"
+	},
+	"MessagesDirs": {
+		"AmazonPartnernet": [
+			"i18n"
+		]
+	},
+	"config": {
+		"AmazonPartnernetPartnerID": {
+			"value": "",
+			"description": "The PartnerID to add to Amazon links."
+		}
+	},
+	"Hooks": {
+		"LinkerMakeExternalLink": [
+			"MediaWiki\\Extension\\AmazonPartnernet\\Hooks::onLinkerMakeExternalLink"
+		]
+	},
+	"manifest_version": 2
+}
